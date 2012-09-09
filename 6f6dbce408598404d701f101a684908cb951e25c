@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAI83//+4Y\u003d",
+        "filename": "ThirdPartyProject.prop",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2012-09-09T22:22:46Z",
+      "side": 0,
+      "message": "(i\u0027ve already removed all these files internally, but those changes aren\u0027t in AOSP yet.)",
+      "revId": "6f6dbce408598404d701f101a684908cb951e25c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}

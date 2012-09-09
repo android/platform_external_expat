@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAI83//+4Q\u003d",
+        "filename": "lib/xmltok_impl.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1747,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2012-09-09T22:22:46Z",
+      "side": 1,
+      "message": "this was the only change in the previous source: i applied this fix from CVS years ago so we wouldn\u0027t have to wait for this release.",
+      "revId": "35e432dd3af2c56c00fc64ca340d1e615030f0a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
