@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "UQMJsl3w",
+        "filename": "README.android",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-05-03T17:52:35Z",
+      "side": 1,
+      "message": "use",
+      "revId": "4676d3908be63e309782fd1fcade45515351b5c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "UQCJqo10",
+        "filename": "README.android",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2013-05-03T17:52:35Z",
+      "side": 1,
+      "message": "build",
+      "revId": "4676d3908be63e309782fd1fcade45515351b5c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
