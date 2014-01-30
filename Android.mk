@@ -68,11 +68,7 @@ include $(BUILD_HOST_SHARED_LIBRARY)
 # Device static library
 include $(CLEAR_VARS)
 
-ifeq ($(TARGET_ARCH),arm)
-    LOCAL_SDK_VERSION := 8
-else
-    LOCAL_SDK_VERSION := 9
-endif
+LOCAL_SDK_VERSION := 19
 
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_CFLAGS += $(common_CFLAGS)
@@ -87,11 +83,7 @@ include $(BUILD_STATIC_LIBRARY)
 # Device shared library
 include $(CLEAR_VARS)
 
-ifeq ($(TARGET_ARCH),arm)
-    LOCAL_SDK_VERSION := 8
-else
-    LOCAL_SDK_VERSION := 9
-endif
+LOCAL_SDK_VERSION := 19
 
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_CFLAGS += $(common_CFLAGS)
