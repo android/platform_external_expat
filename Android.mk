@@ -70,6 +70,8 @@ include $(CLEAR_VARS)
 
 ifeq ($(TARGET_ARCH),arm)
     LOCAL_SDK_VERSION := 8
+else ifeq ($(TARGET_ARCH),arm64)
+$(info TODOArm64: $(LOCAL_PATH)/Android.mk : Use NDK once it is available for Arm64)
 else
     LOCAL_SDK_VERSION := 9
 endif
@@ -89,6 +91,8 @@ include $(CLEAR_VARS)
 
 ifeq ($(TARGET_ARCH),arm)
     LOCAL_SDK_VERSION := 8
+else ifeq ($(TARGET_ARCH),arm64)
+$(info TODOArm64: $(LOCAL_PATH)/Android.mk : Use NDK once it is available for Arm64)
 else
     LOCAL_SDK_VERSION := 9
 endif
