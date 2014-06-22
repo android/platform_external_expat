@@ -1,0 +1,7 @@
+Code-Review+2: Brian Carlstrom <bdc@google.com>
+Verified+1: Ian Rogers <irogers@google.com>
+Submitted-by: Ian Rogers <irogers@google.com>
+Submitted-at: Sun, 22 Jun 2014 23:02:10 +0000
+Reviewed-on: https://android-review.googlesource.com/98157
+Project: platform/external/expat
+Branch: refs/heads/master
