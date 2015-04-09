@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "234d525a_7ab16dc1",
+        "filename": "Blueprints",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1052708
+      },
+      "writtenOn": "2015-04-09T21:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "234d525a_dac97959",
+      "revId": "2f3c417232323482a84ed3db9215449559bd78e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e356daec_15aaf44e",
         "filename": "Blueprints",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "234d525a_9a7e1167",
+        "filename": "Blueprints",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1052708
+      },
+      "writtenOn": "2015-04-09T21:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e356daec_15aaf44e",
+      "revId": "2f3c417232323482a84ed3db9215449559bd78e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "636d8ab3_d93a737a",
         "filename": "Blueprints",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-09T21:06:55Z",
       "side": 1,
       "message": "This is unnecessary now, we can use \"8\" and the symlinks in prebuilts/ndk/current/platforms/android-8/ will automatically use the first version that had the necessary architecture",
+      "revId": "2f3c417232323482a84ed3db9215449559bd78e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e356daec_553b9c9a",
+        "filename": "Blueprints",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1052708
+      },
+      "writtenOn": "2015-04-09T21:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "636d8ab3_d93a737a",
       "revId": "2f3c417232323482a84ed3db9215449559bd78e3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
