@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d53e355_582cfd36",
+        "filename": "tests/benchmark/README.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1038039
+      },
+      "writtenOn": "2016-05-04T14:11:18Z",
+      "side": 1,
+      "message": "Is this present upstream?",
+      "range": {
+        "startLine": 16,
+        "startChar": 40,
+        "endLine": 16,
+        "endChar": 42
+      },
+      "revId": "cee23496d017f13eccc125e2ab7044de53dec8da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
