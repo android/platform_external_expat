@@ -31,7 +31,7 @@ LOCAL_C_INCLUDES += $(common_C_INCLUDES)
 LOCAL_CFLAGS_darwin += -fno-common
 
 LOCAL_MODULE:= libexpat
-LOCAL_MODULE_HOST_OS := darwin linux windows
+LOCAL_MODULE_HOST_OS := darwin linux
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/lib
 
 LOCAL_MULTILIB := both
