@@ -22,6 +22,30 @@
       "revId": "cee23496d017f13eccc125e2ab7044de53dec8da",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d561f47_d750dcc7",
+        "filename": "tests/benchmark/README.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2016-05-04T14:56:12Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "6d53e355_582cfd36",
+      "range": {
+        "startLine": 16,
+        "startChar": 40,
+        "endLine": 16,
+        "endChar": 42
+      },
+      "revId": "cee23496d017f13eccc125e2ab7044de53dec8da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
