@@ -11,13 +11,13 @@
 
 #define INVALID_LEAD_CASE(n, ptr, nextTokPtr) \
     case BT_LEAD ## n: \
-      if (end - ptr < n) \
+      if (end - (ptr) < (n)) \
         return XML_TOK_PARTIAL_CHAR; \
       if (IS_INVALID_CHAR(enc, ptr, n)) { \
         *(nextTokPtr) = (ptr); \
         return XML_TOK_INVALID; \
       } \
-      ptr += n; \
+      (ptr) += (n); \
       break;
 
 #define INVALID_CASES(ptr, nextTokPtr) \
@@ -32,19 +32,19 @@
 
 #define CHECK_NAME_CASE(n, enc, ptr, end, nextTokPtr) \
    case BT_LEAD ## n: \
-     if (end - ptr < n) \
+     if ((end) - (ptr) < (n)) \
        return XML_TOK_PARTIAL_CHAR; \
      if (!IS_NAME_CHAR(enc, ptr, n)) { \
-       *nextTokPtr = ptr; \
+       *(nextTokPtr) = ptr; \
        return XML_TOK_INVALID; \
      } \
-     ptr += n; \
+     (ptr) += (n); \
      break;
 
 #define CHECK_NAME_CASES(enc, ptr, end, nextTokPtr) \
   case BT_NONASCII: \
     if (!IS_NAME_CHAR_MINBPC(enc, ptr)) { \
-      *nextTokPtr = ptr; \
+      *(nextTokPtr) = ptr; \
       return XML_TOK_INVALID; \
     } \
   case BT_NMSTRT: \
@@ -52,7 +52,7 @@
   case BT_DIGIT: \
   case BT_NAME: \
   case BT_MINUS: \
-    ptr += MINBPC(enc); \
+    (ptr) += MINBPC(enc); \
     break; \
   CHECK_NAME_CASE(2, enc, ptr, end, nextTokPtr) \
   CHECK_NAME_CASE(3, enc, ptr, end, nextTokPtr) \
@@ -60,24 +60,24 @@
 
 #define CHECK_NMSTRT_CASE(n, enc, ptr, end, nextTokPtr) \
    case BT_LEAD ## n: \
-     if (end - ptr < n) \
+     if ((end) - (ptr) < (n)) \
        return XML_TOK_PARTIAL_CHAR; \
      if (!IS_NMSTRT_CHAR(enc, ptr, n)) { \
-       *nextTokPtr = ptr; \
+       *(nextTokPtr) = ptr; \
        return XML_TOK_INVALID; \
      } \
-     ptr += n; \
+     (ptr) += (n); \
      break;
 
 #define CHECK_NMSTRT_CASES(enc, ptr, end, nextTokPtr) \
   case BT_NONASCII: \
     if (!IS_NMSTRT_CHAR_MINBPC(enc, ptr)) { \
-      *nextTokPtr = ptr; \
+      *(nextTokPtr) = ptr; \
       return XML_TOK_INVALID; \
     } \
   case BT_NMSTRT: \
   case BT_HEX: \
-    ptr += MINBPC(enc); \
+    (ptr) += MINBPC(enc); \
     break; \
   CHECK_NMSTRT_CASE(2, enc, ptr, end, nextTokPtr) \
   CHECK_NMSTRT_CASE(3, enc, ptr, end, nextTokPtr) \
@@ -352,11 +352,11 @@ PREFIX(cdataSectionTok)(const ENCODING *enc, const char *ptr,
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
     case BT_LEAD ## n: \
-      if (end - ptr < n || IS_INVALID_CHAR(enc, ptr, n)) { \
+      if (end - ptr < (n) || IS_INVALID_CHAR(enc, ptr, n)) { \
         *nextTokPtr = ptr; \
         return XML_TOK_DATA_CHARS; \
       } \
-      ptr += n; \
+      ptr += (n); \
       break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
@@ -836,11 +836,11 @@ PREFIX(contentTok)(const ENCODING *enc, const char *ptr, const char *end,
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
     case BT_LEAD ## n: \
-      if (end - ptr < n || IS_INVALID_CHAR(enc, ptr, n)) { \
+      if (end - ptr < (n) || IS_INVALID_CHAR(enc, ptr, n)) { \
         *nextTokPtr = ptr; \
         return XML_TOK_DATA_CHARS; \
       } \
-      ptr += n; \
+      ptr += (n); \
       break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
@@ -1095,15 +1095,15 @@ PREFIX(prologTok)(const ENCODING *enc, const char *ptr, const char *end,
     return PREFIX(scanPoundName)(enc, ptr + MINBPC(enc), end, nextTokPtr);
 #define LEAD_CASE(n) \
   case BT_LEAD ## n: \
-    if (end - ptr < n) \
+    if (end - ptr < (n)) \
       return XML_TOK_PARTIAL_CHAR; \
     if (IS_NMSTRT_CHAR(enc, ptr, n)) { \
-      ptr += n; \
+      ptr += (n); \
       tok = XML_TOK_NAME; \
       break; \
     } \
     if (IS_NAME_CHAR(enc, ptr, n)) { \
-      ptr += n; \
+      ptr += (n); \
       tok = XML_TOK_NMTOKEN; \
       break; \
     } \
@@ -1210,7 +1210,7 @@ PREFIX(attributeValueTok)(const ENCODING *enc, const char *ptr,
   while (ptr < end) {
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
-    case BT_LEAD ## n: ptr += n; break;
+    case BT_LEAD ## n: ptr += (n); break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
     case BT_AMP:
@@ -1268,7 +1268,7 @@ PREFIX(entityValueTok)(const ENCODING *enc, const char *ptr,
   while (ptr < end) {
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
-    case BT_LEAD ## n: ptr += n; break;
+    case BT_LEAD ## n: ptr += (n); break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
     case BT_AMP:
@@ -1447,7 +1447,7 @@ PREFIX(getAtts)(const ENCODING *enc, const char *ptr,
         state = inName; \
       }
 #define LEAD_CASE(n) \
-    case BT_LEAD ## n: START_NAME ptr += (n - MINBPC(enc)); break;
+    case BT_LEAD ## n: START_NAME ptr += ((n) - MINBPC(enc)); break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
     case BT_NONASCII:
@@ -1702,7 +1702,7 @@ PREFIX(nameLength)(const ENCODING *enc, const char *ptr)
   for (;;) {
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
-    case BT_LEAD ## n: ptr += n; break;
+    case BT_LEAD ## n: ptr += (n); break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE
     case BT_NONASCII:
@@ -1748,7 +1748,7 @@ PREFIX(updatePosition)(const ENCODING *enc,
     switch (BYTE_TYPE(enc, ptr)) {
 #define LEAD_CASE(n) \
     case BT_LEAD ## n: \
-      ptr += n; \
+      ptr += (n); \
       break;
     LEAD_CASE(2) LEAD_CASE(3) LEAD_CASE(4)
 #undef LEAD_CASE

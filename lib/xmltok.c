@@ -46,7 +46,7 @@
 #define VTABLE VTABLE1, PREFIX(toUtf8), PREFIX(toUtf16)
 
 #define UCS2_GET_NAMING(pages, hi, lo) \
-   (namingBitmap[(pages[hi] << 3) + ((lo) >> 5)] & (1 << ((lo) & 0x1F)))
+   (namingBitmap[((pages)[hi] << 3) + ((lo) >> 5)] & (1 << ((lo) & 0x1F)))
 
 /* A 2 byte UTF-8 representation splits the characters 11 bits between
    the bottom 5 and 6 bits of the bytes.  We need 8 bits to index into
@@ -89,37 +89,37 @@
 */
 
 #define UTF8_INVALID2(p) \
-  ((*p) < 0xC2 || ((p)[1] & 0x80) == 0 || ((p)[1] & 0xC0) == 0xC0)
+  ((*(p)) < 0xC2 || ((p)[1] & 0x80) == 0 || ((p)[1] & 0xC0) == 0xC0)
 
 #define UTF8_INVALID3(p) \
   (((p)[2] & 0x80) == 0 \
   || \
-  ((*p) == 0xEF && (p)[1] == 0xBF \
+  ((*(p)) == 0xEF && (p)[1] == 0xBF \
     ? \
     (p)[2] > 0xBD \
     : \
     ((p)[2] & 0xC0) == 0xC0) \
   || \
-  ((*p) == 0xE0 \
+  ((*(p)) == 0xE0 \
     ? \
     (p)[1] < 0xA0 || ((p)[1] & 0xC0) == 0xC0 \
     : \
     ((p)[1] & 0x80) == 0 \
     || \
-    ((*p) == 0xED ? (p)[1] > 0x9F : ((p)[1] & 0xC0) == 0xC0)))
+    ((*(p)) == 0xED ? (p)[1] > 0x9F : ((p)[1] & 0xC0) == 0xC0)))
 
 #define UTF8_INVALID4(p) \
   (((p)[3] & 0x80) == 0 || ((p)[3] & 0xC0) == 0xC0 \
   || \
   ((p)[2] & 0x80) == 0 || ((p)[2] & 0xC0) == 0xC0 \
   || \
-  ((*p) == 0xF0 \
+  ((*(p)) == 0xF0 \
     ? \
     (p)[1] < 0x90 || ((p)[1] & 0xC0) == 0xC0 \
     : \
     ((p)[1] & 0x80) == 0 \
     || \
-    ((*p) == 0xF4 ? (p)[1] > 0x8F : ((p)[1] & 0xC0) == 0xC0)))
+    ((*(p)) == 0xF4 ? (p)[1] > 0x8F : ((p)[1] & 0xC0) == 0xC0)))
 
 static int PTRFASTCALL
 isNever(const ENCODING *enc, const char *p)
@@ -293,7 +293,7 @@ sb_charMatches(const ENCODING *enc, const char *p, int c)
 }
 #else
 /* c is an ASCII character */
-#define CHAR_MATCHES(enc, p, c) (*(p) == c)
+#define CHAR_MATCHES(enc, p, c) (*(p) == (c))
 #endif
 
 #define PREFIX(ident) normal_ ## ident
@@ -691,11 +691,11 @@ DEFINE_UTF16_TO_UTF16(big2_)
   ? ((struct normal_encoding *)(enc))->type[(unsigned char)*(p)] \
   : unicode_byte_type((p)[1], (p)[0]))
 #define LITTLE2_BYTE_TO_ASCII(enc, p) ((p)[1] == 0 ? (p)[0] : -1)
-#define LITTLE2_CHAR_MATCHES(enc, p, c) ((p)[1] == 0 && (p)[0] == c)
+#define LITTLE2_CHAR_MATCHES(enc, p, c) ((p)[1] == 0 && (p)[0] == (c))
 #define LITTLE2_IS_NAME_CHAR_MINBPC(enc, p) \
-  UCS2_GET_NAMING(namePages, (unsigned char)p[1], (unsigned char)p[0])
+  UCS2_GET_NAMING(namePages, (unsigned char)(p)[1], (unsigned char)(p)[0])
 #define LITTLE2_IS_NMSTRT_CHAR_MINBPC(enc, p) \
-  UCS2_GET_NAMING(nmstrtPages, (unsigned char)p[1], (unsigned char)p[0])
+  UCS2_GET_NAMING(nmstrtPages, (unsigned char)(p)[1], (unsigned char)(p)[0])
 
 #ifdef XML_MIN_SIZE
 
@@ -832,11 +832,11 @@ static const struct normal_encoding internal_little2_encoding = {
   ? ((struct normal_encoding *)(enc))->type[(unsigned char)(p)[1]] \
   : unicode_byte_type((p)[0], (p)[1]))
 #define BIG2_BYTE_TO_ASCII(enc, p) ((p)[0] == 0 ? (p)[1] : -1)
-#define BIG2_CHAR_MATCHES(enc, p, c) ((p)[0] == 0 && (p)[1] == c)
+#define BIG2_CHAR_MATCHES(enc, p, c) ((p)[0] == 0 && (p)[1] == (c))
 #define BIG2_IS_NAME_CHAR_MINBPC(enc, p) \
-  UCS2_GET_NAMING(namePages, (unsigned char)p[0], (unsigned char)p[1])
+  UCS2_GET_NAMING(namePages, (unsigned char)(p)[0], (unsigned char)(p)[1])
 #define BIG2_IS_NMSTRT_CHAR_MINBPC(enc, p) \
-  UCS2_GET_NAMING(nmstrtPages, (unsigned char)p[0], (unsigned char)p[1])
+  UCS2_GET_NAMING(nmstrtPages, (unsigned char)(p)[0], (unsigned char)(p)[1])
 
 #ifdef XML_MIN_SIZE
 
@@ -1538,7 +1538,7 @@ getEncodingIndex(const char *name)
 */
 
 #define INIT_ENC_INDEX(enc) ((int)(enc)->initEnc.isUtf16)
-#define SET_INIT_ENC_INDEX(enc, i) ((enc)->initEnc.isUtf16 = (char)i)
+#define SET_INIT_ENC_INDEX(enc, i) ((enc)->initEnc.isUtf16 = (char)(i))
 
 /* This is what detects the encoding.  encodingTable maps from
    encoding indices to encodings; INIT_ENC_INDEX(enc) is the index of

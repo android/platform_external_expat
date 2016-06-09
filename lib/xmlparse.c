@@ -447,14 +447,14 @@ parserInit(XML_Parser parser, const XML_Char *encodingName);
 #define poolStart(pool) ((pool)->start)
 #define poolEnd(pool) ((pool)->ptr)
 #define poolLength(pool) ((pool)->ptr - (pool)->start)
-#define poolChop(pool) ((void)--(pool->ptr))
+#define poolChop(pool) ((void)--((pool)->ptr))
 #define poolLastChar(pool) (((pool)->ptr)[-1])
 #define poolDiscard(pool) ((pool)->ptr = (pool)->start)
 #define poolFinish(pool) ((pool)->start = (pool)->ptr)
 #define poolAppendChar(pool, c) \
   (((pool)->ptr == (pool)->end && !poolGrow(pool)) \
    ? 0 \
-   : ((*((pool)->ptr)++ = c), 1))
+   : ((*((pool)->ptr)++ = (c)), 1))
 
 struct XML_ParserStruct {
   /* The first member must be userData so that the XML_GetUserData
