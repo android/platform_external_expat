@@ -16,6 +16,24 @@
       "revId": "244fcdcf2bd2bb94d2f11c777da3ee6c5b89a135",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ca710bf_e7f3508e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1115549
+      },
+      "writtenOn": "2018-01-10T09:54:49Z",
+      "side": 1,
+      "message": "Those are from the upstream log saying about the original change, I modified it to the upstream changeid",
+      "parentUuid": "09171795_55a82e7e",
+      "revId": "244fcdcf2bd2bb94d2f11c777da3ee6c5b89a135",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
