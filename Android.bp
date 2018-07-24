@@ -6,6 +6,7 @@ cc_library {
     vendor_available: true,
     vndk: {
         enabled: true,
+	support_system_process: true,
     },
     host_supported: true,
     unique_host_soname: true,
