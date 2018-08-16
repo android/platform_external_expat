@@ -12,10 +12,10 @@ cc_library {
     sdk_version: "9",
 
     srcs: [
-        "lib/loadlibrary.c",
-        "lib/xmlparse.c",
-        "lib/xmlrole.c",
-        "lib/xmltok.c",
+        "expat/lib/loadlibrary.c",
+        "expat/lib/xmlparse.c",
+        "expat/lib/xmlrole.c",
+        "expat/lib/xmltok.c",
     ],
     cflags: [
         "-Wall",
@@ -40,6 +40,6 @@ cc_library {
         },
     },
 
-    local_include_dirs: ["lib"],
-    export_include_dirs: ["lib"],
+    local_include_dirs: ["expat", "expat/lib"],
+    export_include_dirs: ["expat/lib"],
 }
