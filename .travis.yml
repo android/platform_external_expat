@@ -1,0 +1,34 @@
+<<<<<<< HEAD   (1cafdb Note that 968b8cc46dbee47b83318d5f31a8e7907199614b was alrea)
+=======
+# Copyright (C) 2017 Sebastian Pipping <sebastian@pipping.org>
+# Licensed under the MIT license
+
+language: cpp
+dist: trusty
+
+# Unbreak clang address sanitizer, needs SYS_PTRACE
+# https://github.com/google/sanitizers/issues/764#issuecomment-276663297
+# https://github.com/travis-ci/travis-ci/issues/9033
+sudo: required
+
+env:
+  global:
+    - CFLAGS='-g -pipe'
+  matrix:
+    - MODE=address
+    - MODE=cmake
+    - MODE=cmake-oos
+    - MODE=distcheck
+    - MODE=lib-coverage
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - docbook2x
+      - dos2unix
+      - rpm
+
+script:
+  - ./.travis.sh
+>>>>>>> BRANCH (39e487 Prepare release version 2.2.6 (#209))

@@ -1,4 +1,6 @@
-#
+<<<<<<< HEAD   (1cafdb Note that 968b8cc46dbee47b83318d5f31a8e7907199614b was alrea)
+=======
+#! /bin/bash
 #                          __  __            _
 #                       ___\ \/ /_ __   __ _| |_
 #                      / _ \\  /| '_ \ / _` | __|
@@ -28,49 +30,34 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 # USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-include_HEADERS = \
-    ../expat_config.h \
-    expat.h \
-    expat_external.h
+set -e
 
-lib_LTLIBRARIES = libexpat.la
+PS4='# '
+set -x
 
-libexpat_la_LDFLAGS = \
-    -no-undefined \
-    -version-info @LIBCURRENT@:@LIBREVISION@:@LIBAGE@
+cd expat
+./buildconf.sh
 
-libexpat_la_SOURCES = \
-    loadlibrary.c \
-    xmlparse.c \
-    xmltok.c \
-    xmlrole.c
+if [[ ${MODE} = distcheck ]]; then
+    ./configure
+    make distcheck
 
-doc_DATA = \
-    ../AUTHORS \
-    ../Changes
-
-install-data-hook:
-	cd "$(DESTDIR)$(docdir)" && $(am__mv) Changes changelog
-
-uninstall-local:
-	$(RM) "$(DESTDIR)$(docdir)/changelog"
-
-EXTRA_DIST = \
-    ascii.h \
-    asciitab.h \
-    expat_external.h \
-    expat.h \
-    iasciitab.h \
-    internal.h \
-    latin1tab.h \
-    libexpat.def \
-    libexpatw.def \
-    nametab.h \
-    siphash.h \
-    utf8tab.h \
-    winconfig.h \
-    xmlrole.h \
-    xmltok.h \
-    xmltok_impl.c \
-    xmltok_impl.h \
-    xmltok_ns.c
+    mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+    ln -v -s "$PWD"/expat-*.tar.bz2 ~/rpmbuild/SOURCES/
+    rpmbuild -ba expat.spec
+elif [[ ${MODE} = cmake ]]; then
+    cmake .
+    make all test
+    make DESTDIR="${PWD}"/ROOT install
+    find ROOT -printf "%P\n" | sort
+elif [[ ${MODE} = cmake-oos ]]; then
+    mkdir build
+    cd build
+    cmake ..
+    make all test
+    make DESTDIR="${PWD}"/ROOT install
+    find ROOT -printf "%P\n" | sort
+else
+    ./qa.sh "${MODE}"
+fi
+>>>>>>> BRANCH (39e487 Prepare release version 2.2.6 (#209))
