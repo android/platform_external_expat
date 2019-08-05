@@ -1,0 +1,30 @@
+cc_defaults {
+    name: "xml_fuzzer_defaults",
+    static_libs: [
+        "libexpat",
+    ],
+    include_dirs: [
+        "external/expat/lib",
+    ],
+    host_supported: true,
+}
+
+cc_fuzz {
+    name: "xml_parse_fuzzer",
+    defaults: [
+        "xml_fuzzer_defaults",
+    ],
+    srcs: [
+        "XML_Parse_fuzzer.cpp",
+    ],
+}
+
+cc_fuzz {
+    name: "xml_parsebuffer_fuzzer",
+    defaults: [
+        "xml_fuzzer_defaults",
+    ],
+    srcs: [
+        "XML_ParseBuffer_fuzzer.cpp",
+    ],
+}
