@@ -1,3 +1,4 @@
+<<<<<<< HEAD   (794558 Merge "Do not use stl" am: 75a0ba404a am: d57fff9a53)
 [![Travis CI Build Status](https://travis-ci.org/libexpat/libexpat.svg?branch=master)](https://travis-ci.org/libexpat/libexpat)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/libexpat/libexpat?svg=true)](https://ci.appveyor.com/project/libexpat/libexpat)
 [![Packaging status](https://repology.org/badge/tiny-repos/expat.svg)](https://repology.org/metapackage/expat/versions)
@@ -125,3 +126,6 @@ information.
 
 A reference manual is available in the file `doc/reference.html` in this
 distribution.
+=======
+expat/README.md
+>>>>>>> BRANCH (d3b78b Bump version from 2.2.6 to 2.2.7)
