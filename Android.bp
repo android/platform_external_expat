@@ -1,6 +1,17 @@
 // We need to build this for both the device (as a shared library)
 // and the host (as a static library for tools to use).
 
+package {
+    default_applicable_licenses: ["external_expat_license"],
+}
+
+license {
+    name: "external_expat_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-MIT","legacy_notice","legacy_unencumbered"],
+    license_text: ["COPYING"],
+}
+
 cc_library {
     name: "libexpat",
     vendor_available: true,
