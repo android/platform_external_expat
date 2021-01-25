@@ -16,6 +16,40 @@
       "message": "PTAL",
       "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f4b6728_b1a1f93f",
+        "filename": "METADATA",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-01-25T23:36:16Z",
+      "side": 1,
+      "message": "no-one adding a dependency will read this file. they\u0027ll read Android.bp instead...",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea453387_ba6d0ea7",
+        "filename": "METADATA",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-01-25T23:36:16Z",
+      "side": 1,
+      "message": "...but this is a man page. does that actually matter in practice? nothing in Android.bp refers to that, so it doesn\u0027t get redistributed.\n\nwhich is lucky, because expat is pretty widely available, with no visibility restrictions (so *any* code can silently add a dependency):\n```\ncc_library {\n    name: \"libexpat\",\n    vendor_available: true,\n    product_available: true,\n    vndk: {\n        enabled: true,\n    },\n    double_loadable: true,\n    host_supported: true,\n    unique_host_soname: true,\n    sdk_version: \"9\",\n...\n```",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
