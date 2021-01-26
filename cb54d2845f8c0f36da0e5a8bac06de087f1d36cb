@@ -35,6 +35,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f8edc34_c8a1556c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1359095
+      },
+      "writtenOn": "2021-01-26T02:36:00Z",
+      "side": 1,
+      "message": "If a code owner says \"Stop! Let me manually tweak this change that your shell and awk script created\", I am happy to wait a day or two while they do that and then review what they\u0027ve done.\n\nBut I will have 1600 or so of these changes affecting thousands of build files that I will need to get merged in the next week or two.\n\nFor the vast bulk of them, they are what they are. They will get merged in bulk using global approval. I cannot afford to wait weeks while perfecting a script that somehow automagically identifies the unused stuff and uses visibility to assert they are unused.\n\nThe \"apply every found license to every target\" approach is \"safe\" from Google\u0027s perspective in that it makes sure our future tooling knows about the most restrictive license -- even it if the build system applies it too broadly.",
+      "parentUuid": "40365b9a_6bc6bdcc",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f4b6728_b1a1f93f",
