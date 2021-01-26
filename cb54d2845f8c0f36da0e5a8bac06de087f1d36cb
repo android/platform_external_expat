@@ -53,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d004ffee_476e1269",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-01-26T18:53:33Z",
+      "side": 1,
+      "message": "yeah, the \"most restrictive license -- even ... if the build system applies it too broadly\" bit was what i\u0027ve been worried about the most, but it seems like i should just ignore all this for now and start worrying again when we actually get to where the build system understands which files are which. (but the fact that you\u0027re thinking that far ahead and understand the problem is comforting in the meantime!)",
+      "parentUuid": "7f8edc34_c8a1556c",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f4b6728_b1a1f93f",
