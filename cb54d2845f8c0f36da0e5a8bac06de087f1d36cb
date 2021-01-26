@@ -18,6 +18,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40365b9a_6bc6bdcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-01-26T01:33:47Z",
+      "side": 1,
+      "message": "(sorry, didn\u0027t see this first. i did read^Wskim your doc but didn\u0027t see the long term plan there.)\n\nif this is the plan, just skip the comment?\n\nsince i\u0027m unable to guess... is there a reason why we don\u0027t just go straight to hiding the bad files? (i.e. why is this an independently useful step?)",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f4b6728_b1a1f93f",
@@ -84,6 +101,24 @@
       "side": 1,
       "message": "Think of this as step-2 in a multi-step journey.\n\nAfter the LSC goes in, it would be possible to \"hide\" the man page using visibility and then put the METADATA back to NOTICE.",
       "parentUuid": "ea453387_ba6d0ea7",
+      "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "657a3fa4_283c7429",
+        "filename": "METADATA",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2021-01-26T01:33:47Z",
+      "side": 1,
+      "message": "oh, yeah, if that\u0027s actually work in progress, that sounds genuinely useful. nice!",
+      "parentUuid": "11ba7f77_032fe1e6",
       "revId": "cb54d2845f8c0f36da0e5a8bac06de087f1d36cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
